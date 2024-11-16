@@ -1,8 +1,5 @@
----
-title: "Tarea Anualidad Vencida"
-author: "Leonardo Daniel"
-date: "2024-11-10
----
+#Tarea Anualidad Vencida
+##Leonardo Daniel
 
 #Ejercicios 
 
