@@ -1,0 +1,200 @@
+---
+title: "Tarea Anualidad Vencida"
+author: "Leonardo Daniel"
+date: "2024-11-10
+---
+
+#Ejercicios 
+
+#Glosario de los ejercicios
+
+VA=Valor Actual
+VF=Valor Final
+r=Tasa de interés compuesta
+t=Tiempo
+i=Tasa de interés anual
+k=Tasa de interés quincenal
+tt= Capitalización al año
+
+#Ejercicio 1:
+
+Un inversionista realiza un pago mensual de $1,200.00 al final de cada mes durante 5 años en una anualidad vencida que paga una tasa de interés del 6% anual, compuesto mensualmente .¿Cuál es el valor futuro de esta inversión?
+
+Fórmula empleada: $VF=VA*(((r+1)^t-1)/r)$
+
+```{r}
+VA=1200
+i=0.06
+r=i/12
+t=5*12
+
+VF=VA*(((r+1)^t-1)/r)
+VF
+```
+
+#Ejercicio 2:
+
+Una empresa realiza pagos quincenales de $2,000 al final de cada quincena en una cuenta que paga una tasa de interés del 7% anual, compuesta quincenalmente, durante 10 años. ¿Cuál será el valor futuro de esta anualidad vencida?
+
+Fórmula empleada: $VF=VA*(((r+1)^t-1)/r)$
+
+```{r}
+VA=2000
+i=0.07
+r=i/24
+t=24*10
+
+VF=VA*(((r+1)^t-1)/r)
+VF
+```
+
+#Ejercicio 3:
+
+Una persona realiza pagos mensuales de $800 al final de cada mes en una cuenta que paga una tasa de interés del 4% anual, compuesta mensualmente, durante 3 años bajo una anualidad vencida. ¿Cuál es el valor futuro al finalizar el plazo?
+
+Fórmula empleada: $VF=VA*(((r+1)^t-1)/r)$
+
+```{r}
+VA=800
+i=0.04
+r=i/12
+t=12*3
+
+VF=VA*(((r+1)^t-1)/r)
+VF
+```
+
+#Ejercicio 4:
+
+Una persona desea tener $150,000 dentro de 8 años, realizando pagos quincenales al final de cada quincena a una tasa de interés del 5% anual, compuesta quincenalmente. ¿Cuánto debe ser el monto de cada pago quincenal si la anualidad es vencida?
+
+Fórmula empleada: $P=VF*r/((1+r)^t-1)$
+
+
+```{r}
+VF=150000
+i=0.05
+r=i/24
+t=8*24
+
+P=VF*r/((1+r)^t-1)
+P
+```
+
+#Ejercicio 5:
+
+Una persona desea acumular $200,000 en 15 años mediante pagos mensuales al final de cada mes bajo una anualidad vencida con una tasa de interés del 3% anual, compuesta mensualmente. ¿Cuánto debe pagar cada mes?
+
+Fórmula empleada: $P=VF*r/((1+r)^t-1)$
+
+
+```{r}
+VF=200000
+i=0.03
+r=i/12
+t=15*12
+
+P=VF*r/((1+r)^t-1)
+P
+```
+
+#Ejercicio 6:
+
+Una empresa quiere acumular $500,000 en 12 años mediante pagos quincenales al final de cada quincena bajo una anualidad vencida con una tasa de interés del 6% anual, compuesta quincenalmente. ¿Cuánto deberá pagar cada quincena?
+
+Fórmula empleada: $P=VF*r/((1+r)^t-1)$
+
+
+```{r}
+VF=200000
+i=0.03
+r=i/12
+t=15*12
+
+P=VF*r/((1+r)^t-1)
+P
+```
+
+#Ejercicio 7:
+
+Una persona desea acumular $200,000 en 15 años mediante pagos mensuales al final de cada mes bajo una anualidad vencida con una tasa de interés del 3% anual, compuesta mensualmente. ¿Cuánto debe pagar cada mes?
+
+Fórmula empleada: $P=VF*r/((1+r)^t-1)$
+
+
+```{r}
+VF=500000
+i=0.06
+r=i/24
+t=12*24
+
+P=VF*r/((1+r)^t-1)
+P
+```
+
+#Ejercicio 8:
+
+Un individuo realiza pagos quincenales de $1,000 al final de cada quincena en una cuenta que paga una tasa de interés del 5% anual, compuesta quincenalmente. Si quiere acumular $80,000, ¿cuántas quincenas deberá hacer estos pagos bajo una anualidad vencida?
+
+Fórmula empleada: $t=log((VF*r/P)+1)/log(1+r)$
+
+
+```{r}
+VF=80000
+i=0.045
+r=i/24
+P=1000
+
+t=log((VF*r/P)+1)/log(1+r)
+t
+```
+
+#Ejercicio 9:
+
+Se realizan pagos quincenales de $900 al final de cada quincena en una cuenta de ahorro durante 6 años bajo una anualidad vencida. Si al final del plazo se acumulan $210,000, ¿cuál es la tasa de interés anual compuesta quincenalmente?
+
+Fórmulas empleadas: $i=tt*((VF/P)^(1/(tt*t))-1)$
+ $k=(1+i)^(1/tt)-1$
+
+
+```{r}
+VF=210000
+r=i/24
+P=900
+t=6
+tt=66
+
+i=tt*((VF/P)^(1/(tt*t))-1)
+i
+
+k=(1+i)^(1/tt)-1
+k
+
+cat("La tasa de interés anual (i) es:", i * 100, "%\n")
+cat("La tasa de interés quincenal (k) es:", k * 100, "%\n")
+```
+
+#Ejercicio 10:
+
+Se realizan pagos mensuales de 1,500 pesos al final de cada mes durante 7 años bajo una anualidad vencida. Si al final se acumula un valor futuro de 150,000 pesos, ¿cuál es la tasa de interés anual compuesta mensualmente?
+
+Fórmulas empleadas: $i=tt*((VF/P)^(1/(tt*t))-1)$
+ $k=(1+i)^(1/tt)-1$
+
+
+```{r}
+VF=150000
+r=i/24
+P=1500
+t=7
+tt=7*12
+
+i=tt*((VF/P)^(1/(tt*t))-1)
+i
+
+k=(1+i)^(1/tt)-1
+k
+
+cat("La tasa de interés anual (i) es:", i * 100, "%\n")
+cat("La tasa de interés mensual (k) es:", k * 100, "%\n")
+```
